@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "700834286043",
+    "project_id": "socibip",
+    "storage_bucket": "socibip.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700834286043:android:abeda9e4a549bec231bffe",
+        "android_client_info": {
+          "package_name": "com.example.socibip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700834286043-j8g492optb43fncdjmosvjgoalld9b7g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socibip",
+            "certificate_hash": "fb6203820759c13aecc53cb0b8ff0ab64957773b"
+          }
+        },
+        {
+          "client_id": "700834286043-ahfmd435g7dteul8ett2tusnjj7do0u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTW4z5SRBb471KLsnRmxUfBmbtGeUriVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700834286043-ahfmd435g7dteul8ett2tusnjj7do0u3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "700834286043-139ijm381tn6jpj2qhmm5vrdvchki3lu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.socibip"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
