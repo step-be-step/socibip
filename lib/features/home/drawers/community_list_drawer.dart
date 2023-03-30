@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routemaster/routemaster.dart';
+import 'package:socibip/core/common/error_text.dart';
+import 'package:socibip/core/common/loader.dart';
+import 'package:socibip/features/community/controller/community_controller.dart';
 
 class CommunityListDrawer extends ConsumerWidget {
   const CommunityListDrawer({super.key});
@@ -19,7 +22,27 @@ class CommunityListDrawer extends ConsumerWidget {
             title: const Text('Создать обсуждение'),
             leading: const Icon(Icons.add),
             onTap: () => navigateToCreateCommunity(context),
-          )
+          ),
+          ref.watch(userCommunitiesProvider).when(
+                data: (communities) => Expanded(
+                  child: ListView.builder(
+                    itemCount: communities.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      final community = communities[index];
+                      return ListTile(
+                        leading: CircleAvatar(
+                            backgroundImage: NetworkImage(community.avatar)),
+                        title: Text(community.name),
+                        onTap: () {},
+                      );
+                    },
+                  ),
+                ),
+                error: (error, st) => ErrorText(
+                  error: error.toString(),
+                ),
+                loading: () => const Loader(),
+              ),
         ],
       )),
     );

@@ -7,6 +7,11 @@ import 'package:socibip/features/auth/controller/auth_controller.dart';
 import 'package:socibip/features/community/repository/community_repository.dart';
 import 'package:socibip/models/community_model.dart';
 
+final userCommunitiesProvider = StreamProvider((ref) {
+  final communityController = ref.watch(communityControllerProvider.notifier);
+  return communityController.getUserCommunites();
+});
+
 final communityControllerProvider =
     StateNotifierProvider<CommunityController, bool>((ref) {
   final communityRepository = ref.watch(communityRepositoryProvider);
@@ -41,5 +46,10 @@ class CommunityController extends StateNotifier<bool> {
       showSnackBar(context, 'Обсуждение создано!');
       Routemaster.of(context).pop();
     });
+  }
+
+  Stream<List<Community>> getUserCommunites() {
+    final uid = _ref.read(userProvider)!.uid;
+    return _communityRepository.getUserCommunites(uid);
   }
 }
