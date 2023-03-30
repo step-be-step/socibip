@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:routemaster/routemaster.dart';
 import 'package:socibip/core/common/error_text.dart';
 import 'package:socibip/core/common/loader.dart';
 import 'package:socibip/features/auth/controller/auth_controller.dart';
@@ -10,6 +9,7 @@ import 'package:socibip/firebase_options.dart';
 import 'package:socibip/models/user_model.dart';
 import 'package:socibip/router.dart';
 import 'package:socibip/theme/pallete.dart';
+import 'package:routemaster/routemaster.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,7 +56,7 @@ class _MyAppState extends ConsumerState<MyApp> {
                     return loggedInRoute;
                   }
                 }
-                return loggedOutRoute;
+                return loggedInRoute;
               },
             ),
             routeInformationParser: const RoutemasterParser(),
