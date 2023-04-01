@@ -4,12 +4,17 @@ import 'package:routemaster/routemaster.dart';
 import 'package:socibip/core/common/error_text.dart';
 import 'package:socibip/core/common/loader.dart';
 import 'package:socibip/features/community/controller/community_controller.dart';
+import 'package:socibip/models/community_model.dart';
 
 class CommunityListDrawer extends ConsumerWidget {
   const CommunityListDrawer({super.key});
 
   void navigateToCreateCommunity(BuildContext context) {
     Routemaster.of(context).push('/create-community');
+  }
+
+  void navigateToCommunity(BuildContext context, Community community) {
+    Routemaster.of(context).push('/bp/${community.name}');
   }
 
   @override
@@ -30,11 +35,13 @@ class CommunityListDrawer extends ConsumerWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final community = communities[index];
                       return ListTile(
-                        leading: CircleAvatar(
-                            backgroundImage: NetworkImage(community.avatar)),
-                        title: Text(community.name),
-                        onTap: () {},
-                      );
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(community.avatar),
+                          ),
+                          title: Text(community.name),
+                          onTap: () {
+                            navigateToCommunity(context, community);
+                          });
                     },
                   ),
                 ),
