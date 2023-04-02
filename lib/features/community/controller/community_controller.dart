@@ -69,7 +69,7 @@ class CommunityController extends StateNotifier<bool> {
     final res = await _communityRepository.createCommunity(community);
     state = false;
     res.fold((l) => showSnackBar(context, l.message), (r) {
-      showSnackBar(context, 'Community created successfully!');
+      showSnackBar(context, 'Обсуждение создано успешно!');
       Routemaster.of(context).pop();
     });
   }
@@ -86,9 +86,9 @@ class CommunityController extends StateNotifier<bool> {
 
     res.fold((l) => showSnackBar(context, l.message), (r) {
       if (community.members.contains(user.uid)) {
-        showSnackBar(context, 'Community left successfully!');
+        showSnackBar(context, 'Вы покинули обсуждение!');
       } else {
-        showSnackBar(context, 'Community joined successfully!');
+        showSnackBar(context, 'Вы присоеденились к обсуждению!');
       }
     });
   }

@@ -87,7 +87,7 @@ class PostController extends StateNotifier<bool> {
     _ref.read(userProfileControllerProvider.notifier).updateUserKarma(UserKarma.textPost);
     state = false;
     res.fold((l) => showSnackBar(context, l.message), (r) {
-      showSnackBar(context, 'Posted successfully!');
+      showSnackBar(context, 'Отправлено успешно!');
       Routemaster.of(context).pop();
     });
   }
@@ -122,7 +122,7 @@ class PostController extends StateNotifier<bool> {
     _ref.read(userProfileControllerProvider.notifier).updateUserKarma(UserKarma.linkPost);
     state = false;
     res.fold((l) => showSnackBar(context, l.message), (r) {
-      showSnackBar(context, 'Posted successfully!');
+      showSnackBar(context, 'Отправлено успешно!');
       Routemaster.of(context).pop();
     });
   }
@@ -165,7 +165,7 @@ class PostController extends StateNotifier<bool> {
       _ref.read(userProfileControllerProvider.notifier).updateUserKarma(UserKarma.imagePost);
       state = false;
       res.fold((l) => showSnackBar(context, l.message), (r) {
-        showSnackBar(context, 'Posted successfully!');
+        showSnackBar(context, 'Отправлено успешно!');
         Routemaster.of(context).pop();
       });
     });
@@ -185,7 +185,7 @@ class PostController extends StateNotifier<bool> {
   void deletePost(Post post, BuildContext context) async {
     final res = await _postRepository.deletePost(post);
     _ref.read(userProfileControllerProvider.notifier).updateUserKarma(UserKarma.deletePost);
-    res.fold((l) => null, (r) => showSnackBar(context, 'Post Deleted successfully!'));
+    res.fold((l) => null, (r) => showSnackBar(context, 'Обсуждение удалено!'));
   }
 
   void upvote(Post post) async {

@@ -33,7 +33,7 @@ class ProfileDrawer extends ConsumerWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'u/${user.name}',
+              '${user.name}',
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
@@ -42,12 +42,12 @@ class ProfileDrawer extends ConsumerWidget {
             const SizedBox(height: 10),
             const Divider(),
             ListTile(
-              title: const Text('My Profile'),
+              title: const Text('Мой Профиль'),
               leading: const Icon(Icons.person),
               onTap: () => navigateToUserProfile(context, user.uid),
             ),
             ListTile(
-              title: const Text('Log Out'),
+              title: const Text('Выйти'),
               leading: Icon(
                 Icons.logout,
                 color: Pallete.redColor,

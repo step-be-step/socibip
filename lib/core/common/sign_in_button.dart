@@ -23,7 +23,7 @@ class SignInButton extends ConsumerWidget {
           width: 35,
         ),
         label: const Text(
-          'Continue with Google',
+          'Войти с помощью Google',
           style: TextStyle(fontSize: 18),
         ),
         style: ElevatedButton.styleFrom(

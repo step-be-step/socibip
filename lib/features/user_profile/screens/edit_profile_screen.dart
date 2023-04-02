@@ -96,12 +96,12 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
           data: (user) => Scaffold(
             backgroundColor: currentTheme.backgroundColor,
             appBar: AppBar(
-              title: const Text('Edit Profile'),
+              title: const Text('Редактировать профиль'),
               centerTitle: false,
               actions: [
                 TextButton(
                   onPressed: save,
-                  child: const Text('Save'),
+                  child: const Text('Сохранить'),
                 ),
               ],
             ),
@@ -173,7 +173,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                             controller: nameController,
                             decoration: InputDecoration(
                               filled: true,
-                              hintText: 'Name',
+                              hintText: 'Имя',
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(color: Colors.blue),
                                 borderRadius: BorderRadius.circular(10),

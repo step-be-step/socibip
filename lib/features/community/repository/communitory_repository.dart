@@ -20,7 +20,7 @@ class CommunityRepository {
     try {
       var communityDoc = await _communities.doc(community.name).get();
       if (communityDoc.exists) {
-        throw 'Community with the same name already exists!';
+        throw 'Обсуждение с таким именим уже существует!';
       }
 
       return right(_communities.doc(community.name).set(community.toMap()));

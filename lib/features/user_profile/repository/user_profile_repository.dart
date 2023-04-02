@@ -4,11 +4,11 @@ import 'package:fpdart/fpdart.dart';
 import 'package:socibip/core/constants/firebase_constants.dart';
 import 'package:socibip/core/enums/enums.dart';
 import 'package:socibip/core/failure.dart';
+import 'package:socibip/core/providers/firebase_providers.dart';
 import 'package:socibip/core/type_defs.dart';
 import 'package:socibip/models/post_model.dart';
 import 'package:socibip/models/user_model.dart';
 
-import '../../../core/providers/firebase_providers.dart';
 
 final userProfileRepositoryProvider = Provider((ref) {
   return UserProfileRepository(firestore: ref.watch(firestoreProvider));

@@ -36,7 +36,7 @@ class CommentCard extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'u/${comment.username}',
+                          '${comment.username}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
@@ -48,15 +48,16 @@ class CommentCard extends ConsumerWidget {
                 ),
               ],
             ),
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.reply),
-                ),
-                const Text('Reply'),
-              ],
-            ),
+            /// Ответить
+            // Row(
+            //   children: [
+            //     IconButton(
+            //       onPressed: () {},
+            //       icon: const Icon(Icons.reply),
+            //     ),
+            //     const Text('Ответить'),
+            //   ],
+            // ),
           ],
         ),
       ),

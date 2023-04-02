@@ -43,7 +43,7 @@ class PostCard extends ConsumerWidget {
   }
 
   void navigateToCommunity(BuildContext context) {
-    Routemaster.of(context).push('/r/${post.communityName}');
+    Routemaster.of(context).push('/bp/${post.communityName}');
   }
 
   void navigateToComments(BuildContext context) {
@@ -85,7 +85,7 @@ class PostCard extends ConsumerWidget {
                         ),
                       ),
                       Text(
-                        '${post.upvotes.length - post.downvotes.length == 0 ? 'Vote' : post.upvotes.length - post.downvotes.length}',
+                        '${post.upvotes.length - post.downvotes.length == 0 ? '' : post.upvotes.length - post.downvotes.length}',
                         style: const TextStyle(fontSize: 17),
                       ),
                       IconButton(
@@ -132,7 +132,7 @@ class PostCard extends ConsumerWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'r/${post.communityName}',
+                                            '${post.communityName}',
                                             style: const TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
@@ -142,7 +142,7 @@ class PostCard extends ConsumerWidget {
                                             onTap: () =>
                                                 navigateToUser(context),
                                             child: Text(
-                                              'u/${post.username}',
+                                              '${post.username}',
                                               style:
                                                   const TextStyle(fontSize: 12),
                                             ),
@@ -241,7 +241,7 @@ class PostCard extends ConsumerWidget {
                                         ),
                                       ),
                                       Text(
-                                        '${post.upvotes.length - post.downvotes.length == 0 ? 'Голос' : post.upvotes.length - post.downvotes.length}',
+                                        '${post.upvotes.length - post.downvotes.length == 0 ? '' : post.upvotes.length - post.downvotes.length}',
                                         style: const TextStyle(fontSize: 17),
                                       ),
                                       IconButton(
@@ -269,7 +269,7 @@ class PostCard extends ConsumerWidget {
                                       ),
                                     ),
                                     Text(
-                                      '${post.commentCount == 0 ? 'Комментарии' : post.commentCount}',
+                                      '${post.commentCount == 0 ? '' : post.commentCount}',
                                       style: const TextStyle(fontSize: 17),
                                     ),
                                   ],

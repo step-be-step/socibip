@@ -16,7 +16,7 @@ class CommunityListDrawer extends ConsumerWidget {
   }
 
   void navigateToCommunity(BuildContext context, Community community) {
-    Routemaster.of(context).push('/r/${community.name}');
+    Routemaster.of(context).push('/bp/${community.name}');
   }
 
   @override
@@ -31,7 +31,7 @@ class CommunityListDrawer extends ConsumerWidget {
             isGuest
                 ? const SignInButton()
                 : ListTile(
-                    title: const Text('Create a community'),
+                    title: const Text('Создать обсуждение'),
                     leading: const Icon(Icons.add),
                     onTap: () => navigateToCreateCommunity(context),
                   ),
@@ -46,7 +46,7 @@ class CommunityListDrawer extends ConsumerWidget {
                             leading: CircleAvatar(
                               backgroundImage: NetworkImage(community.avatar),
                             ),
-                            title: Text('r/${community.name}'),
+                            title: Text('${community.name}'),
                             onTap: () {
                               navigateToCommunity(context, community);
                             },

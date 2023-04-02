@@ -27,7 +27,7 @@ class LoginScreen extends ConsumerWidget {
           TextButton(
             onPressed: () => signInAsGuest(ref, context),
             child: const Text(
-              'Skip',
+              'Пропустить',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -41,7 +41,7 @@ class LoginScreen extends ConsumerWidget {
               children: [
                 const SizedBox(height: 30),
                 const Text(
-                  'Dive into anything',
+                  'Социальная сеть техникума Бизнес и Права',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

@@ -80,7 +80,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
             link: linkController.text.trim(),
           );
     } else {
-      showSnackBar(context, 'Please enter all the fields');
+      showSnackBar(context, 'Пожалуйста заполните все поля');
     }
   }
 
@@ -98,7 +98,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
         actions: [
           TextButton(
             onPressed: sharePost,
-            child: const Text('Share'),
+            child: const Text('Опубликовать'),
           ),
         ],
       ),
@@ -113,7 +113,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
                       controller: titleController,
                       decoration: const InputDecoration(
                         filled: true,
-                        hintText: 'Enter Title here',
+                        hintText: 'Введите Заголовок',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.all(18),
                       ),
@@ -153,7 +153,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
                         controller: descriptionController,
                         decoration: const InputDecoration(
                           filled: true,
-                          hintText: 'Enter Description here',
+                          hintText: 'Введите описание',
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.all(18),
                         ),
@@ -164,7 +164,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
                         controller: linkController,
                         decoration: const InputDecoration(
                           filled: true,
-                          hintText: 'Enter link here',
+                          hintText: 'Введите ссылку',
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.all(18),
                         ),
@@ -173,7 +173,7 @@ class _AddPostTypeScreenState extends ConsumerState<AddPostTypeScreen> {
                     const Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Select Community',
+                        'Выберите обсуждение',
                       ),
                     ),
                     ref.watch(userCommunitiesProvider).when(

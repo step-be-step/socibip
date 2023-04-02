@@ -58,7 +58,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
                         onSubmitted: (val) => addComment(data),
                         controller: commentController,
                         decoration: const InputDecoration(
-                          hintText: 'What are your thoughts?',
+                          hintText: 'Что вы думаете об этом',
                           filled: true,
                           border: InputBorder.none,
                         ),

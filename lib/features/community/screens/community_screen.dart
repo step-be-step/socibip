@@ -12,7 +12,7 @@ class CommunityScreen extends ConsumerWidget {
   final String name;
   const CommunityScreen({super.key, required this.name});
 
-  // http://localhost:4000/r/flutter
+  // http://localhost:4000/bp/flutter
 
   void navigateToModTools(BuildContext context) {
     Routemaster.of(context).push('/mod-tools/$name');
@@ -64,7 +64,7 @@ class CommunityScreen extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'r/${community.name}',
+                                community.name,
                                 style: const TextStyle(
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class CommunityScreen extends ConsumerWidget {
                                           ),
                                           padding: const EdgeInsets.symmetric(horizontal: 25),
                                         ),
-                                        child: const Text('Mod Tools'),
+                                        child: const Text('Модератор'),
                                       )
                                     : OutlinedButton(
                                         onPressed: () => joinCommunity(ref, community, context),
@@ -92,14 +92,14 @@ class CommunityScreen extends ConsumerWidget {
                                           ),
                                           padding: const EdgeInsets.symmetric(horizontal: 25),
                                         ),
-                                        child: Text(community.members.contains(user.uid) ? 'Joined' : 'Join'),
+                                        child: Text(community.members.contains(user.uid) ? 'Выйти' : 'Вступить'),
                                       ),
                             ],
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Text(
-                              '${community.members.length} members',
+                              '${community.members.length} участники',
                             ),
                           ),
                         ],

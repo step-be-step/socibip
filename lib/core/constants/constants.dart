@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:socibip/features/feed/feed_screen.dart';
-import 'package:socibip/features/home/screens/home_screen.dart';
 import 'package:socibip/features/post/screens/add_post_screen.dart';
 
 class Constants {
