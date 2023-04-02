@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:socibip/core/common/error_text.dart';
 import 'package:socibip/core/common/loader.dart';
-import 'package:socibip/features/auth/controller/auth_controller.dart';
+import 'package:socibip/features/auth/controlller/auth_controller.dart';
 import 'package:socibip/firebase_options.dart';
 import 'package:socibip/models/user_model.dart';
 import 'package:socibip/router.dart';
@@ -46,16 +46,16 @@ class _MyAppState extends ConsumerState<MyApp> {
     return ref.watch(authStateChangeProvider).when(
           data: (data) => MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            title: 'SociBiP',
-            theme: Pallete.darkModeAppTheme,
+            title: 'SociBiP SociBiP',
+            theme: ref.watch(themeNotifierProvider),
             routerDelegate: RoutemasterDelegate(
               routesBuilder: (context) {
                 if (data != null) {
                   getData(ref, data);
                   // проверка
-                  // if(ref.read(userProvider) != null) {
-                    return loggedInRoute;
-                  // }
+                  if(ref.read(userProvider) != null) {
+                  return loggedInRoute;
+                  }
                 }
                 return loggedOutRoute;
               },

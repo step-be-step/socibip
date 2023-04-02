@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:socibip/core/common/loader.dart';
-import 'package:socibip/core/common/sing_in_button.dart';
+import 'package:socibip/core/common/sign_in_button.dart';
 import 'package:socibip/core/constants/constants.dart';
-import 'package:socibip/features/auth/controller/auth_controller.dart';
+import 'package:socibip/features/auth/controlller/auth_controller.dart';
+import 'package:socibip/responsive/responsive.dart';
 
 class LoginScreen extends ConsumerWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
+
+  void signInAsGuest(WidgetRef ref, BuildContext context) {
+    ref.read(authControllerProvider.notifier).signInAsGuest(context);
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,10 +25,12 @@ class LoginScreen extends ConsumerWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => signInAsGuest(ref, context),
             child: const Text(
-              'Пропустить',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              'Skip',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
@@ -34,7 +41,7 @@ class LoginScreen extends ConsumerWidget {
               children: [
                 const SizedBox(height: 30),
                 const Text(
-                  "Мера присуща",
+                  'Dive into anything',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -50,7 +57,7 @@ class LoginScreen extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const SignInButton(),
+                const Responsive(child: SignInButton()),
               ],
             ),
     );

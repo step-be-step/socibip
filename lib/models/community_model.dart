@@ -35,16 +35,14 @@ class Community {
   }
 
   Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-
-    result.addAll({'id': id});
-    result.addAll({'name': name});
-    result.addAll({'banner': banner});
-    result.addAll({'avatar': avatar});
-    result.addAll({'members': members});
-    result.addAll({'mods': mods});
-
-    return result;
+    return {
+      'id': id,
+      'name': name,
+      'banner': banner,
+      'avatar': avatar,
+      'members': members,
+      'mods': mods,
+    };
   }
 
   factory Community.fromMap(Map<String, dynamic> map) {
@@ -57,6 +55,7 @@ class Community {
       mods: List<String>.from(map['mods']),
     );
   }
+
   @override
   String toString() {
     return 'Community(id: $id, name: $name, banner: $banner, avatar: $avatar, members: $members, mods: $mods)';
@@ -77,11 +76,6 @@ class Community {
 
   @override
   int get hashCode {
-    return id.hashCode ^
-        name.hashCode ^
-        banner.hashCode ^
-        avatar.hashCode ^
-        members.hashCode ^
-        mods.hashCode;
+    return id.hashCode ^ name.hashCode ^ banner.hashCode ^ avatar.hashCode ^ members.hashCode ^ mods.hashCode;
   }
 }
