@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:socibip/core/constants/constants.dart';
 import 'package:socibip/core/constants/firebase_constants.dart';
 import 'package:socibip/core/failure.dart';
@@ -88,6 +89,11 @@ class AuthRepository {
       } else {
         userModel = await getUserData(userCredential.user!.uid).first;
       }
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('isLoggedIn', true);
+
+
       return right(userModel);
     } on FirebaseException catch (e) {
       throw e.message!;

@@ -24,7 +24,7 @@ dependencies:
 
   dotted_border: ^2.0.0+2
   file_picker: ^5.2.1
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.1.1
   uuid: ^3.0.6
   any_link_preview: ^2.0.9
 

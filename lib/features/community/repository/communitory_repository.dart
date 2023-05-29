@@ -67,6 +67,8 @@ class CommunityRepository {
 
   Stream<Community> getCommunityByName(String name) {
     return _communities.doc(name).snapshots().map((event) => Community.fromMap(event.data() as Map<String, dynamic>));
+    // return FirebaseFirestore.instance.collection('users').where('uid', isEqualTo: uid).snapshots();
+
   }
 
   FutureVoid editCommunity(Community community) async {

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -53,8 +55,8 @@ class _MyAppState extends ConsumerState<MyApp> {
                 if (data != null) {
                   getData(ref, data);
                   // проверка
-                  if(ref.read(userProvider) != null) {
-                  return loggedInRoute;
+                  if (ref.read(userProvider) != null) {
+                    return loggedInRoute;
                   }
                 }
                 return loggedOutRoute;

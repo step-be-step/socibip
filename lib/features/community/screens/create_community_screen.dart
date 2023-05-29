@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:socibip/core/common/loader.dart';
 import 'package:socibip/features/community/controller/community_controller.dart';
@@ -8,7 +9,8 @@ class CreateCommunityScreen extends ConsumerStatefulWidget {
   const CreateCommunityScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _CreateCommunityScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _CreateCommunityScreenState();
 }
 
 class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
@@ -44,10 +46,14 @@ class _CreateCommunityScreenState extends ConsumerState<CreateCommunityScreen> {
                   children: [
                     const Align(
                       alignment: Alignment.topLeft,
-                      child: Text('Название обсуждения'),
+                      child: Text('Название обсуждения\nИспользуйте латиницу'),
                     ),
                     const SizedBox(height: 10),
                     TextField(
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(
+                            '[a-zA-Z]')), // разрешаем только буквы a-z и A-Z
+                      ],
                       controller: communityNameController,
                       decoration: const InputDecoration(
                         hintText: 'название_обусждения',
